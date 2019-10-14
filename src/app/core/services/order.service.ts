@@ -15,13 +15,13 @@ export class OrderService {
   });
 
   constructor(private productService: ProductService, private storage: StorageService) {
-    this.order.subscribe((order) => {
-      this.storage.set('order', order);
-    });
-
     if (this.storage.get('order')) {
       this.order.next(this.storage.get('order'));
     }
+
+    this.order.subscribe((order) => {
+      this.storage.set('order', order);
+    });
   }
 
   public getReduction() {
