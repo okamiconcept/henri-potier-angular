@@ -1,0 +1,27 @@
+<section class="section">
+  <div class="columns">
+    <div class="column">
+      <h1 class="title is-2">Products</h1>
+    </div>
+
+    <form class="column">
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          <input class="input" type="text" placeholder="Search" />
+          <span class="icon is-small is-left">
+            <i class="fas fa-search"></i>
+          </span>
+        </p>
+      </div>
+    </form>
+  </div>
+
+  <ng-container *ngIf="!loading">
+    <div class="columns is-multiline">
+      <app-product class="column is-one-quarter" *ngFor="let product of filteredProducts" [product]="product"></app-product>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="loading">
+    <div>Chargement en cours...</div>
+  </ng-container>
+</section>
