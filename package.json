@@ -1,6 +1,7 @@
 {
   "name": "henri-potier-angular",
-  "version": "0.0.0",
+  "homepage": "https://okamiconcept.github.io/henri-potier-angular",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -12,7 +13,9 @@
     "analyze": "source-map-explorer 'dist/henri-potier-angular/*-es2015.*.js'",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "predeploy": "yarn build -- --base-href=/henri-potier-angular/",
+    "deploy": "gh-pages -d dist/henri-potier-angular"
   },
   "private": true,
   "dependencies": {
@@ -52,6 +55,7 @@
     "tslint": "~5.15.0",
     "typescript": "~3.5.3",
     "webpack-bundle-analyzer": "^3.5.2",
-    "source-map-explorer": "^2.1.0"
+    "source-map-explorer": "^2.1.0",
+    "gh-pages": "^2.1.1"
   }
 }
