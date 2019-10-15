@@ -5,9 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:stats": "ng build --prod --stats-json",
+    "build:stats": "ng build --prod --statsJson --sourceMap",
+    "build:analyze": "yarn build:stats && yarn analyze",
     "build:stats:report": "yarn build:stats && yarn bundle-report",
     "bundle-report": "webpack-bundle-analyzer dist/henri-potier-angular/stats-es2015.json",
+    "analyze": "source-map-explorer 'dist/henri-potier-angular/*-es2015.*.js'",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -49,6 +51,7 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3",
-    "webpack-bundle-analyzer": "^3.5.2"
+    "webpack-bundle-analyzer": "^3.5.2",
+    "source-map-explorer": "^2.1.0"
   }
 }
