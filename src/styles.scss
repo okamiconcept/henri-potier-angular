@@ -1,25 +1,9 @@
 @charset "utf-8";
 
-$fa-font-path: "~@fortawesome/fontawesome-free/webfonts/";
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts/';
 
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
-@import "~@fortawesome/fontawesome-free/scss/solid";
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
 
-@import "~bulma";
-@import "~bulma-badge";
-
-.fade-enter {
-  opacity: 0.01;
-  &.fade-enter-active {
-    opacity: 1;
-    transition: opacity 500ms ease-in;
-  }
-}
-
-.fade-leave {
-  opacity: 1;
-  &.fade-leave-active {
-    opacity: 0.01;
-    transition: opacity 300ms ease-in;
-  }
-}
+@import '~bulma';
+@import '~bulma-badge';
