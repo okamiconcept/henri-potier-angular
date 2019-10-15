@@ -4,10 +4,10 @@
       <h1 class="title is-2">Products</h1>
     </div>
 
-    <form class="column">
+    <form class="column" [formGroup]="searchForm">
       <div class="field">
         <p class="control has-icons-left has-icons-right">
-          <input class="input" type="text" placeholder="Search" />
+          <input class="input" type="text" placeholder="Search" formControlName="text" />
           <span class="icon is-small is-left">
             <i class="fas fa-search"></i>
           </span>
@@ -17,7 +17,7 @@
   </div>
 
   <ng-container *ngIf="!loading">
-    <div class="columns is-multiline">
+    <div class="columns is-multiline" [@fadeInOut]="filteredProducts.length">
       <app-product class="column is-one-quarter" *ngFor="let product of filteredProducts" [product]="product"></app-product>
     </div>
   </ng-container>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { concatMap, filter, map } from 'rxjs/operators';
+import { concatMap, distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { Order, OrderItem } from '../models/OrderModel';
 import { CommercialOffer, Product } from '../models/ProductModel';
 import { ProductService } from './product.service';
@@ -27,7 +27,7 @@ export class OrderService {
   public getReduction() {
     return this.order.pipe(
       filter((order) => order.count > 0),
-      // distinctUntilChanged((prevOrder, order) => prevOrder.count !== order.count),
+      distinctUntilChanged((prevOrder, order) => prevOrder.count === order.count),
       concatMap((order) => {
         return this.productService
           .getCommercialOffers(order.items.map((orderItem) => orderItem.product.isbn))
