@@ -5,7 +5,7 @@ import { CommercialOffersResponse, Product } from '../models/ProductModel';
 
 @Injectable()
 export class ProductService {
-  private apiURL = 'http://henri-potier.xebia.fr';
+  private apiURL = 'https://henri-potier-proxy.herokuapp.com';
 
   constructor(private http: HttpClient) {}
 
