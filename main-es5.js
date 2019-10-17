@@ -466,7 +466,7 @@
             var ProductService = /** @class */ (function () {
                 function ProductService(http) {
                     this.http = http;
-                    this.apiURL = 'http://henri-potier.xebia.fr';
+                    this.apiURL = 'https://henri-potier-proxy.herokuapp.com';
                 }
                 ProductService.prototype.getProducts = function () {
                     var route = '/books';

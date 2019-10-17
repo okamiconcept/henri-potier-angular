@@ -535,7 +535,7 @@ __webpack_require__.r(__webpack_exports__);
 class ProductService {
     constructor(http) {
         this.http = http;
-        this.apiURL = 'http://henri-potier.xebia.fr';
+        this.apiURL = 'https://henri-potier-proxy.herokuapp.com';
     }
     getProducts() {
         const route = '/books';
