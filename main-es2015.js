@@ -567,15 +567,16 @@ __webpack_require__.r(__webpack_exports__);
 class StorageService {
     constructor(platformId) {
         this.platformId = platformId;
+        this.prefix = 'hpa-';
     }
     set(key, value) {
         if (Object(_angular_common__WEBPACK_IMPORTED_MODULE_0__["isPlatformBrowser"])(this.platformId)) {
-            localStorage.setItem(key, JSON.stringify(value));
+            localStorage.setItem(this.prefix + key, JSON.stringify(value));
         }
     }
     get(key) {
         if (Object(_angular_common__WEBPACK_IMPORTED_MODULE_0__["isPlatformBrowser"])(this.platformId)) {
-            return JSON.parse(localStorage.getItem(key));
+            return JSON.parse(localStorage.getItem(this.prefix + key));
         }
         else {
             return null;
@@ -583,7 +584,7 @@ class StorageService {
     }
     unset(key) {
         if (Object(_angular_common__WEBPACK_IMPORTED_MODULE_0__["isPlatformBrowser"])(this.platformId)) {
-            localStorage.removeItem(key);
+            localStorage.removeItem(this.prefix + key);
         }
     }
     clearAll() {

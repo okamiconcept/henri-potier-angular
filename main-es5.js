@@ -495,15 +495,16 @@
             var StorageService = /** @class */ (function () {
                 function StorageService(platformId) {
                     this.platformId = platformId;
+                    this.prefix = 'hpa-';
                 }
                 StorageService.prototype.set = function (key, value) {
                     if (Object(_angular_common__WEBPACK_IMPORTED_MODULE_0__["isPlatformBrowser"])(this.platformId)) {
-                        localStorage.setItem(key, JSON.stringify(value));
+                        localStorage.setItem(this.prefix + key, JSON.stringify(value));
                     }
                 };
                 StorageService.prototype.get = function (key) {
                     if (Object(_angular_common__WEBPACK_IMPORTED_MODULE_0__["isPlatformBrowser"])(this.platformId)) {
-                        return JSON.parse(localStorage.getItem(key));
+                        return JSON.parse(localStorage.getItem(this.prefix + key));
                     }
                     else {
                         return null;
@@ -511,7 +512,7 @@
                 };
                 StorageService.prototype.unset = function (key) {
                     if (Object(_angular_common__WEBPACK_IMPORTED_MODULE_0__["isPlatformBrowser"])(this.platformId)) {
-                        localStorage.removeItem(key);
+                        localStorage.removeItem(this.prefix + key);
                     }
                 };
                 StorageService.prototype.clearAll = function () {
